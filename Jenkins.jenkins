@@ -1,0 +1,22 @@
+pipeline {
+    agent any
+    stages {
+	stage('Build'){
+                steps{
+                        set M2_HOME=D:\apache-maven-3.8.4
+			set path=D:\apache-maven-3.8.4\bin;%path%;
+			set JAVA_HOME=C:\Program Files\Java\jdk1.8.0_261
+			set path=C:\Program Files\Java\jdk1.8.0_261\bin;%path%;
+			cd /d D:\petclinic\spring-petclinic
+			mvn clean package
+                }	
+	    }
+	stage('Archive'){
+		steps{
+			"C:\Program Files\WinRAR\WinRAR.exe" a -r D:\1Rar\target.rar D:\petclinic\spring-petclinic\target
+	}
+	stage('Deploy'){
+		steps{
+			"C:\Program Files\WinRAR\WinRAR.exe" x D:\1Rar\target.rar D:\1Rar\Deploy
+	}
+}
