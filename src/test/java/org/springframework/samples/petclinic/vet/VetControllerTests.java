@@ -51,15 +51,39 @@ class VetControllerTests {
 
 	private Vet helen;
 
+	// @BeforeEach
+	// void setup() {
+	// james = new Vet();
+	// james.setFirstName("James");
+	// james.setLastName("Carter");
+	// james.setId(1);
+	// helen = new Vet();
+	// helen.setFirstName("Helen");
+	// helen.setLastName("Leary");
+	// helen.setId(2);
+	// Specialty radiology = new Specialty();
+	// radiology.setId(1);
+	// radiology.setName("radiology");
+	// helen.addSpecialty(radiology);
+	// given(this.vets.findAll()).willReturn(Lists.newArrayList(james, helen));
+	// given(this.vets.findAll(any(Pageable.class))).willReturn(new
+	// PageImpl<Vet>(Lists.newArrayList(james, helen)));
+
+	// }
+
+	///////////////////////////////////////////////////////////////////////
 	@BeforeEach
 	void setup() {
 		james = new Vet();
 		james.setFirstName("James");
 		james.setLastName("Carter");
+		james.setAge(21);
 		james.setId(1);
 		helen = new Vet();
 		helen.setFirstName("Helen");
 		helen.setLastName("Leary");
+		helen.setAge(21);
+
 		helen.setId(2);
 		Specialty radiology = new Specialty();
 		radiology.setId(1);
@@ -70,6 +94,7 @@ class VetControllerTests {
 
 	}
 
+	///////////////////////////////////////////////////////////////////////
 	@Test
 	void testShowVetListHtml() throws Exception {
 
