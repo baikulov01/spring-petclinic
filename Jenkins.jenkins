@@ -8,12 +8,12 @@ pipeline {
 	    }
 	stage('Archive'){
 		steps{
-			"C:\Program Files\WinRAR\WinRAR.exe" a -r D:\1Rar\target.rar D:\petclinic\spring-petclinic\target
+			bat 'rar.bat'
 		}
 	}
 	stage('Deploy'){
 		steps{
-			"C:\Program Files\WinRAR\WinRAR.exe" x D:\1Rar\target.rar D:\1Rar\Deploy
+			bat 'derar.bat'
 		}
 	}
 }
