@@ -3,8 +3,7 @@ pipeline {
     stages {
 	stage('Build'){
                 steps{
-			cd /d D:\petclinic\spring-petclinic
-			mvn clean package
+			bat 'build.bat'
                 }	
 	    }
 	stage('Archive'){
