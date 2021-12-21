@@ -156,19 +156,7 @@ class OwnerControllerTests {
 
 	}
 
-	// @Test
-	// void testInitUpdateOwnerForm() throws Exception {
-	// mockMvc.perform(get("/owners/{ownerId}/edit",
-	// TEST_OWNER_ID)).andExpect(status().isOk())
-	// .andExpect(model().attributeExists("owner"))
-	// .andExpect(model().attribute("owner", hasProperty("lastName", is("Franklin"))))
-	// .andExpect(model().attribute("owner", hasProperty("firstName", is("George"))))
-	// .andExpect(model().attribute("owner", hasProperty("address", is("110 W. Liberty
-	// St."))))
-	// .andExpect(model().attribute("owner", hasProperty("city", is("Madison"))))
-	// .andExpect(model().attribute("owner", hasProperty("telephone", is("6085551023"))))
-	// .andExpect(view().name("owners/createOrUpdateOwnerForm"));
-	// }
+
 
 	@Test
 	void testProcessUpdateOwnerFormSuccess() throws Exception {
@@ -188,38 +176,6 @@ class OwnerControllerTests {
 				.andExpect(view().name("owners/createOrUpdateOwnerForm"));
 	}
 
-	// @Test
-	// void testShowOwner() throws Exception {
-	// mockMvc.perform(get("/owners/{ownerId}", TEST_OWNER_ID)).andExpect(status().isOk())
-	// .andExpect(model().attribute("owner", hasProperty("lastName", is("Franklin"))))
-	// .andExpect(model().attribute("owner", hasProperty("firstName", is("George"))))
-	// .andExpect(model().attribute("owner", hasProperty("address", is("110 W. Liberty
-	// St."))))
-	// .andExpect(model().attribute("owner", hasProperty("city", is("Madison"))))
-	// .andExpect(model().attribute("owner", hasProperty("telephone", is("6085551023"))))
-	// .andExpect(model().attribute("owner", hasProperty("pets", not(empty()))))
-	// .andExpect(model().attribute("owner", hasProperty("pets", new
-	// BaseMatcher<List<Pet>>() {
-
-	// @Override
-	// public boolean matches(Object item) {
-	// @SuppressWarnings("unchecked")
-	// List<Pet> pets = (List<Pet>) item;
-	// Pet pet = pets.get(0);
-	// if (pet.getVisits().isEmpty()) {
-	// return false;
-	// }
-	// return true;
-	// }
-
-	// @Override
-	// public void describeTo(Description description) {
-	// description.appendText("Max did not have any visits");
-	// }
-	// }))).andExpect(view().name("owners/ownerDetails"));
-	// }
-
-	////////////////////////////////////////////////////////////////////////////////
 	@Test
 	void testInitUpdateOwnerForm() throws Exception {
 		mockMvc.perform(get("/owners/{ownerId}/edit", TEST_OWNER_ID)).andExpect(status().isOk())
